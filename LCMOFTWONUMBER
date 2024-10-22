@@ -1,0 +1,22 @@
+#include<stdio.h>
+void main()
+{
+    int a,b,max;
+    printf("Enter two numbers: ");
+    scanf("%d%d",&a,&b);
+    if(a>b){
+    max=a;
+    }
+    else{
+        max=b;
+    }
+    for(int i=max;i<=(a*b);i++){
+        if(i%a==0 && i%b==0){
+          printf("lcm:%d",i);
+            break;
+        }
+        
+    }
+    
+    
+}
