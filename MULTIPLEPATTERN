@@ -1,0 +1,135 @@
+#include <stdio.h>
+
+void a(int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+}
+
+void b(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+}
+
+void c(int n) {
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+}
+
+void d(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = i; j < n; j++) {
+            printf(" ");
+        }
+        for (int j = 1; j <= (2 * i - 1); j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+void e(int n) {
+    for (int i = n; i >= 1; i--) {
+        for (int j = n; j > i; j--) {
+            printf(" ");
+        }
+        for (int j = 1; j <= (2 * i - 1); j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+void f(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    for (int i = n - 1; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+}
+
+void g(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = i; j < n; j++) {
+            printf(" ");
+        }
+        for (int j = 1; j <= (2 * i - 1); j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    for (int i = n - 1; i >= 1; i--) {
+        for (int j = n; j > i; j--) {
+            printf(" ");
+        }
+        for (int j = 1; j <= (2 * i - 1); j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int x, n;
+
+    printf("Select the pattern type to print:\n");
+    printf("1. Square\n");
+    printf("2. Right Triangle\n");
+    printf("3. Inverted Triangle\n");
+    printf("4. Pyramid\n");
+    printf("5. Inverted Pyramid\n");
+    printf("6. Half Diamond\n");
+    printf("7. Diamond\n");
+    printf("Enter your choice (1-7): ");
+    scanf("%d", &x);
+
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+
+    switch (x) {
+        case 1:
+            a(n);
+            break;
+        case 2:
+            b(n);
+            break;
+        case 3:
+            c(n);
+            break;
+        case 4:
+            d(n);
+            break;
+        case 5:
+            e(n);
+            break;
+        case 6:
+            f(n);
+            break;
+        case 7:
+            g(n);
+            break;
+        default:
+            printf("Invalid choice!\n");
+            break;
+    }
+
+    return 0;
+}
