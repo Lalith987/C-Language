@@ -1,0 +1,65 @@
+#include <stdio.h>
+void add(int a, int b) {
+    printf("Result of addition: %d\n", a + b);
+}
+
+void subtract(int a, int b) {
+    printf("Result of subtraction: %d\n", a - b);
+}
+
+void multiply(int a, int b) {
+    printf("Result of multiplication: %d\n", a * b);
+}
+
+void divide(int a, int b) {
+    if (b != 0) {
+        printf("Result of division: %.2f\n", (float)a / b);
+    } else {
+        printf("Division by zero is not allowed.\n");
+    }
+}
+
+void percentage(int total, int value) {
+    if (total != 0) {
+        printf("Percentage: %.2f%%\n", ((float)value / total) * 100);
+    } else {
+        printf("Total value cannot be zero for percentage calculation.\n");
+    }
+}
+
+void main() {
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("5. Percentage\n");
+
+    int choice;
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    switch(choice) {
+        case 1:
+            add(num1, num2);
+            break;
+        case 2:
+            subtract(num1, num2);
+            break;
+        case 3:
+            multiply(num1, num2);
+            break;
+        case 4:
+            divide(num1, num2);
+            break;
+        case 5:
+            percentage(num1, num2);
+            break;
+        default:
+            printf("Invalid choice\n");
+    }
+
+}
